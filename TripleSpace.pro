@@ -14,10 +14,27 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         nomenuwnd.cpp \
-    menuwnd.cpp
+    menuwnd.cpp \
+    beginwgt.cpp \
+    editcodewgt.cpp \
+    runprogramwgt.cpp \
+    commoninterfacefunction.cpp \
+    movewgt.cpp \
+    iowgt.cpp
 
 HEADERS  += nomenuwnd.h \
-    menuwnd.h
+    menuwnd.h \
+    beginwgt.h \
+    editcodewgt.h \
+    runprogramwgt.h \
+    commoninterfacefunction.h \
+    movewgt.h \
+    iowgt.h
 
 FORMS    += nomenuwnd.ui \
-    menuwnd.ui
+    menuwnd.ui \
+    beginwgt.ui \
+    editcodewgt.ui \
+    runprogramwgt.ui \
+    movewgt.ui \
+    iowgt.ui
