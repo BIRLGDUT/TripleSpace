@@ -2,6 +2,7 @@
 #include "ui_beginwgt.h"
 #include "commoninterfacefunction.h"
 #include "menuwnd.h"
+#include "globalmacro.h"
 
 BeginWgt::BeginWgt(QWidget *parent) :
     QWidget(parent),
@@ -18,21 +19,63 @@ BeginWgt::~BeginWgt()
     delete ui;
 }
 
-void BeginWgt::on_runProgramBtn_clicked()
+void BeginWgt::windowShow(int index)
 {
-    if(menuwnd != NULL)
-        delete menuwnd;
-    menuwnd = new MenuWnd();
-
-    int windowWidth = 960, windowHeight = 720;
+    int windowWidth = 960, windowHeight = 720;   //获取显示器分辨率
     CommonInterfaceFunction *p = new CommonInterfaceFunction();
     p->getWindowspixel(windowWidth, windowHeight);
-    menuwnd->resize(windowWidth, windowHeight);
 
-    menuwnd->show();
+    if(RUNPROGRAMBTN == index || EDITCODEBTN == index)
+    {
+        if(menuwnd != NULL)
+            delete menuwnd;
+        menuwnd = new MenuWnd();      //构造MenuWnd对象指针
+        menuwnd->resize(windowWidth, windowHeight);//设置窗口大小
+        menuwnd->show();
+    }
+    else
+    {
+        if(menuwnd != NULL)
+            delete menuwnd;
+            menuwnd = new MenuWnd();      //构造MenuWnd对象指针
+            menuwnd = NULL;
+    }
+
+    switch(index)
+    {
+    case RUNPROGRAMBTN:    //进入运行程序窗口
+        menuwnd->changeStack(RUNPROGRAMWGTPAGE);   //进入对应的窗口stack
+        break;
+    case EDITCODEBTN:    //进入编辑程序窗口
+        menuwnd->changeStack(EDITCODEWGTPAGE);
+        break;
+    case SETROBOTBTN:
+        emit setPageNum(SETROBOTWGTPAGE);//设置无菜单窗口stack页码为1
+        break;
+    case SHUTDOWNBTN:
+        emit setPageNum(4);//
+        break;
+    }
+
+
+}
+
+void BeginWgt::on_runProgramBtn_clicked()
+{
+    windowShow(RUNPROGRAMBTN); //调用私有函数，弹出运行程序窗口
 }
 
 void BeginWgt::on_editCodeBtn_clicked()
 {
+    windowShow(EDITCODEBTN);  //调用私有函数，弹出编辑程序窗口
+}
 
+void BeginWgt::on_setRobotBtn_clicked()
+{
+    windowShow(SETROBOTBTN);
+}
+
+void BeginWgt::on_shutDownBtn_clicked()
+{
+    windowShow(SHUTDOWNBTN);
 }

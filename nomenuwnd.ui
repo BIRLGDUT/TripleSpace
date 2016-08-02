@@ -17,8 +17,9 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="BeginWgt" name="page"/>
-      <widget class="QWidget" name="page_2"/>
+      <widget class="BeginWgt" name="beginPage"/>
+      <widget class="SetRobotWgt" name="setRobotPage"/>
+      <widget class="QWidget" name="page_3"/>
      </widget>
     </item>
    </layout>
@@ -49,6 +50,12 @@
    <class>BeginWgt</class>
    <extends>QWidget</extends>
    <header location="global">beginwgt.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SetRobotWgt</class>
+   <extends>QWidget</extends>
+   <header location="global">setrobotwgt.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -13,6 +13,7 @@ class MenuWnd : public QMainWindow
 
 public:
     explicit MenuWnd(QWidget *parent = 0);
+    void changeStack(int index);
     ~MenuWnd();
 
 private:

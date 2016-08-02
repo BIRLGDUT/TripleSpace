@@ -6,46 +6,47 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>590</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
-   <property name="geometry">
-    <rect>
-     <x>-4</x>
-     <y>-1</y>
-     <width>411</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>2</number>
-   </property>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Tab 1</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>Tab 2</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>页</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="tab_4">
-    <attribute name="title">
-     <string>页</string>
-    </attribute>
-   </widget>
-  </widget>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="edirCodeTab">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="programTab">
+      <attribute name="title">
+       <string>程序</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="installSetTab">
+      <attribute name="title">
+       <string>安装设置</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="mobeTab">
+      <attribute name="title">
+       <string>移动</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="IoTab">
+      <attribute name="title">
+       <string>I/O</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="logTab">
+      <attribute name="title">
+       <string>日志</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

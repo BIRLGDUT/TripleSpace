@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     runprogramwgt.cpp \
     commoninterfacefunction.cpp \
     movewgt.cpp \
-    iowgt.cpp
+    iowgt.cpp \
+    setrobotwgt.cpp
 
 HEADERS  += nomenuwnd.h \
     menuwnd.h \
@@ -29,7 +30,9 @@ HEADERS  += nomenuwnd.h \
     runprogramwgt.h \
     commoninterfacefunction.h \
     movewgt.h \
-    iowgt.h
+    iowgt.h \
+    setrobotwgt.h \
+    globalmacro.h
 
 FORMS    += nomenuwnd.ui \
     menuwnd.ui \
@@ -37,4 +40,5 @@ FORMS    += nomenuwnd.ui \
     editcodewgt.ui \
     runprogramwgt.ui \
     movewgt.ui \
-    iowgt.ui
+    iowgt.ui \
+    setrobotwgt.ui

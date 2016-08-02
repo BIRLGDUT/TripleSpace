@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     p->getWindowspixel(windowsWidth, windowsHeight);
     w.resize(windowsWidth, windowsHeight);
     delete p;
+    p = NULL;
 
     w.show();
 

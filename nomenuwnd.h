@@ -15,6 +15,9 @@ public:
     explicit NoMenuWnd(QWidget *parent = 0);
     ~NoMenuWnd();
 
+private slots:
+    void setStackPage(int index);
+
 private:
     Ui::NoMenuWnd *ui;
 };
