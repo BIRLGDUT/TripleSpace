@@ -5,6 +5,7 @@ const int BEGINWGTPAGE = 0;
 const int SETROBOTWGTPAGE = 1;
 const int RUNPROGRAMWGTPAGE = 0;
 const int EDITCODEWGTPAGE = 1;
+const int SHUTDOWNPAGE = 4;
 
 #endif // GLOBALMACRO_H
 

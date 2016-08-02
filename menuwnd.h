@@ -16,6 +16,12 @@ public:
     void changeStack(int index);
     ~MenuWnd();
 
+private slots:
+    void on_actionExit_E_triggered();
+
+signals:
+    void menuWndStatus(bool);
+
 private:
     Ui::MenuWnd *ui;
 };

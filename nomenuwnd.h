@@ -17,6 +17,7 @@ public:
 
 private slots:
     void setStackPage(int index);
+    void setWndStatus(bool index);
 
 private:
     Ui::NoMenuWnd *ui;

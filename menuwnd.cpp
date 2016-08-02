@@ -25,3 +25,9 @@ void MenuWnd::changeStack(int index)
         break;
     }
 }
+
+void MenuWnd::on_actionExit_E_triggered()
+{
+    emit menuWndStatus(true);
+    close();
+}

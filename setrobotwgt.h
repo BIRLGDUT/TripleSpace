@@ -25,15 +25,15 @@ private:
     Ui::SetRobotWgt *ui;
     void btnAction(int index);
 
-    //define the push button macros.
-#define INITROBOTBTN 1
-#define CHANGELANGUAGEBTN 2
-#define UPDATEROBOTBTN 3
-#define SETPASSWORDBTN 4
-#define CORRECTSCREENBTN 5
-#define SETWEBBTN 6
-#define SETTIMEBTN 7
-#define RETURNBTN 8
+    //define push button const variable
+    const int INITROBOTBTN;
+    const int CHANGELANGUAGEBTN;
+    const int UPDATEROBOTBTN;
+    const int SETPASSWORDBTN;
+    const int CORRECTSCREENBTN;
+    const int SETWEBBTN;
+    const int SETTIMEBTN;
+    const int RETURNBTN;
 };
 
 #endif // SETROBOTWGT_H

@@ -3,8 +3,7 @@
 
 #include <QWidget>
 
-
-class MenuWnd;
+class MenuWnd;//pre-declaration
 
 namespace Ui {
 class BeginWgt;
@@ -17,6 +16,7 @@ class BeginWgt : public QWidget
 public:
     explicit BeginWgt(QWidget *parent = 0);
     ~BeginWgt();
+    MenuWnd *menuwnd;
 
 private slots:
     void on_runProgramBtn_clicked();
@@ -29,17 +29,18 @@ private slots:
 
 signals:
     void setPageNum(int);//设置无菜单窗口的stack页码信号
+    void setNoMenuWndStatus(bool);//设置唔菜单窗口显示与否的信号
 
 private:
     Ui::BeginWgt *ui;
-    MenuWnd *menuwnd;
+
     void windowShow(int index);
 
-    //define the push button macros.
-#define RUNPROGRAMBTN  1
-#define EDITCODEBTN  2
-#define SETROBOTBTN  3
-#define SHUTDOWNBTN  4
+    //define push button const variable
+    const int RUNPROGRAMBTN;
+    const int EDITCODEBTN;
+    const int SETROBOTBTN;
+    const int SHUTDOWNBTN;
 };
 
 #endif // BEGINWGT_H

@@ -6,10 +6,11 @@
 
 BeginWgt::BeginWgt(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::BeginWgt)
+    ui(new Ui::BeginWgt),RUNPROGRAMBTN(1),EDITCODEBTN(2),
+    SETROBOTBTN(3),SHUTDOWNBTN(4)
 {
-    menuwnd = NULL;
     ui->setupUi(this);
+    menuwnd = NULL;
 }
 
 BeginWgt::~BeginWgt()
@@ -21,43 +22,47 @@ BeginWgt::~BeginWgt()
 
 void BeginWgt::windowShow(int index)
 {
-    int windowWidth = 960, windowHeight = 720;   //获取显示器分辨率
-    CommonInterfaceFunction *p = new CommonInterfaceFunction();
-    p->getWindowspixel(windowWidth, windowHeight);
-
     if(RUNPROGRAMBTN == index || EDITCODEBTN == index)
     {
-        if(menuwnd != NULL)
-            delete menuwnd;
-        menuwnd = new MenuWnd();      //构造MenuWnd对象指针
-        menuwnd->resize(windowWidth, windowHeight);//设置窗口大小
+        if(menuwnd != NULL);//delete menuwnd;
+        else
+        {
+            int windowWidth = 960, windowHeight = 720;   //获取显示器分辨率
+            CommonInterfaceFunction *p = new CommonInterfaceFunction();
+            p->getWindowspixel(windowWidth, windowHeight);
+            menuwnd = new MenuWnd();      //构造MenuWnd对象指针
+            menuwnd->resize(windowWidth, windowHeight);//设置窗口大小
+            delete p;
+        }
+        connect(menuwnd,SIGNAL(menuWndStatus(bool)),this,SIGNAL(setNoMenuWndStatus(bool)));
         menuwnd->show();
     }
     else
     {
         if(menuwnd != NULL)
+        {
             delete menuwnd;
-            menuwnd = new MenuWnd();      //构造MenuWnd对象指针
             menuwnd = NULL;
+        }
     }
 
     switch(index)
     {
-    case RUNPROGRAMBTN:    //进入运行程序窗口
+    case 1:    //进入运行程序窗口
         menuwnd->changeStack(RUNPROGRAMWGTPAGE);   //进入对应的窗口stack
+        emit setNoMenuWndStatus(false);
         break;
-    case EDITCODEBTN:    //进入编辑程序窗口
+    case 2:    //进入编辑程序窗口
         menuwnd->changeStack(EDITCODEWGTPAGE);
+        emit setNoMenuWndStatus(false);
         break;
-    case SETROBOTBTN:
-        emit setPageNum(SETROBOTWGTPAGE);//设置无菜单窗口stack页码为1
+    case 3:
+        emit setPageNum(SETROBOTWGTPAGE);//change the stack of the nomenuwnd to setrobot page
         break;
-    case SHUTDOWNBTN:
-        emit setPageNum(4);//
+    case 4:
+        emit setPageNum(SHUTDOWNPAGE);//关闭机器人，退出程序
         break;
     }
-
-
 }
 
 void BeginWgt::on_runProgramBtn_clicked()
@@ -79,3 +84,4 @@ void BeginWgt::on_shutDownBtn_clicked()
 {
     windowShow(SHUTDOWNBTN);
 }
+

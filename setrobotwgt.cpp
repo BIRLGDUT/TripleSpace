@@ -4,7 +4,9 @@
 
 SetRobotWgt::SetRobotWgt(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::SetRobotWgt)
+    ui(new Ui::SetRobotWgt),INITROBOTBTN(1),CHANGELANGUAGEBTN(2),
+    UPDATEROBOTBTN(3),SETPASSWORDBTN(4),CORRECTSCREENBTN(5),
+    SETWEBBTN(6),SETTIMEBTN(7),RETURNBTN(8)
 {
     ui->setupUi(this);
 }
@@ -18,21 +20,21 @@ void SetRobotWgt::btnAction(int index)
 {
     switch(index)
     {
-    case INITROBOTBTN:
+    case 1:
         break;
-    case CHANGELANGUAGEBTN:
+    case 2:
         break;
-    case UPDATEROBOTBTN:
+    case 3:
         break;
-    case SETPASSWORDBTN:
+    case 4:
         break;
-    case CORRECTSCREENBTN:
+    case 5:
         break;
-    case SETWEBBTN:
+    case 6:
         break;
-    case SETTIMEBTN:
+    case 7:
         break;
-    case RETURNBTN:
+    case 8:
         emit setPageNum(BEGINWGTPAGE);
         break;
     }
