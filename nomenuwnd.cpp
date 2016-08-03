@@ -10,6 +10,9 @@ NoMenuWnd::NoMenuWnd(QWidget *parent) :
     connect(ui->beginPage,SIGNAL(setPageNum(int)),this,SLOT(setStackPage(int)));
     connect(ui->setRobotPage,SIGNAL(setPageNum(int)),this,SLOT(setStackPage(int)));
     connect(ui->beginPage,SIGNAL(setNoMenuWndStatus(bool)),this,SLOT(setWndStatus(bool)));
+    //hide the titlebar of this windows
+    //this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
+    this->setWindowFlags( Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
 }
 
 NoMenuWnd::~NoMenuWnd()

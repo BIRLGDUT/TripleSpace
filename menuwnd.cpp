@@ -6,6 +6,7 @@ MenuWnd::MenuWnd(QWidget *parent) :
     ui(new Ui::MenuWnd)
 {
     ui->setupUi(this);
+    this->setWindowFlags( Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
 }
 
 MenuWnd::~MenuWnd()

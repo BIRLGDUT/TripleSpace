@@ -33,8 +33,9 @@ void BeginWgt::windowShow(int index)
             menuwnd = new MenuWnd();      //构造MenuWnd对象指针
             menuwnd->resize(windowWidth, windowHeight);//设置窗口大小
             delete p;
+            connect(menuwnd,SIGNAL(menuWndStatus(bool)),this,SIGNAL(setNoMenuWndStatus(bool)));
         }
-        connect(menuwnd,SIGNAL(menuWndStatus(bool)),this,SIGNAL(setNoMenuWndStatus(bool)));
+
         menuwnd->show();
     }
     else
@@ -50,10 +51,12 @@ void BeginWgt::windowShow(int index)
     {
     case 1:    //进入运行程序窗口
         menuwnd->changeStack(RUNPROGRAMWGTPAGE);   //进入对应的窗口stack
+        menuwnd->setWindowTitle("Run Program");
         emit setNoMenuWndStatus(false);
         break;
     case 2:    //进入编辑程序窗口
         menuwnd->changeStack(EDITCODEWGTPAGE);
+        menuwnd->setWindowTitle("Edit Code");
         emit setNoMenuWndStatus(false);
         break;
     case 3:
