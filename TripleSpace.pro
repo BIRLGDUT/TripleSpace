@@ -34,11 +34,11 @@ HEADERS  += nomenuwnd.h \
     setrobotwgt.h \
     globalmacro.h
 
-FORMS    += nomenuwnd.ui \
-    menuwnd.ui \
-    beginwgt.ui \
-    editcodewgt.ui \
-    runprogramwgt.ui \
-    movewgt.ui \
-    iowgt.ui \
-    setrobotwgt.ui
+FORMS    += ui/nomenuwnd.ui \
+    ui/menuwnd.ui \
+    ui/beginwgt.ui \
+    ui/editcodewgt.ui \
+    ui/runprogramwgt.ui \
+    ui/movewgt.ui \
+    ui/iowgt.ui \
+    ui/setrobotwgt.ui
