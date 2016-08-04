@@ -11,34 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = TripleSpace
 TEMPLATE = app
 
+include($$PWD\mainWindowFrame\mainWindowFrame.pri)
+include($$PWD\childWindows\childWindows.pri)
 
-SOURCES += main.cpp\
-        nomenuwnd.cpp \
-    menuwnd.cpp \
-    beginwgt.cpp \
-    editcodewgt.cpp \
-    runprogramwgt.cpp \
-    commoninterfacefunction.cpp \
-    movewgt.cpp \
-    iowgt.cpp \
-    setrobotwgt.cpp
+SOURCES += main.cpp
 
-HEADERS  += nomenuwnd.h \
-    menuwnd.h \
-    beginwgt.h \
-    editcodewgt.h \
-    runprogramwgt.h \
-    commoninterfacefunction.h \
-    movewgt.h \
-    iowgt.h \
-    setrobotwgt.h \
-    globalmacro.h
+HEADERS  += globalmacro.h
 
-FORMS    += ui/nomenuwnd.ui \
-    ui/menuwnd.ui \
-    ui/beginwgt.ui \
-    ui/editcodewgt.ui \
-    ui/runprogramwgt.ui \
-    ui/movewgt.ui \
-    ui/iowgt.ui \
-    ui/setrobotwgt.ui

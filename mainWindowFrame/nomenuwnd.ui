@@ -50,15 +50,15 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>BeginWgt</class>
-   <extends>QWidget</extends>
-   <header location="global">beginwgt.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SetRobotWgt</class>
    <extends>QWidget</extends>
    <header location="global">setrobotwgt.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BeginWgt</class>
+   <extends>QWidget</extends>
+   <header location="global">beginwgt.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
